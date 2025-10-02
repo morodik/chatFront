@@ -1,0 +1,93 @@
+.ProfilePage {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: linear-gradient(81.75deg, #131E2F 2.39%, #999999 142.88%);
+}
+
+.ProfilePage__formBlock {
+  box-sizing: border-box;
+  position: absolute;
+  width: 528px;
+  height: 400px;
+  left: 456px;
+  top: 200px;
+  background: rgba(93, 96, 113, 0.28);
+  border: 1px solid rgba(207, 207, 207, 0.28);
+  backdrop-filter: blur(5.7px);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.ProfilePage__title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.ProfilePage__label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  height: 48px;
+}
+
+.ProfilePage__inputWrapper,
+.ProfilePage__passwordWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 448px;
+  display: flex;
+  align-items: center;
+}
+
+.ProfilePage__input {
+  width: 100%;
+  max-width: 448px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(207, 207, 207, 0.28);
+  border-radius: 10px;
+  padding: 0 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.ProfilePage__input--password {
+  width: 100%;
+}
+
+.ProfilePage__showButton {
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(207,207,207,0.28);
+  backdrop-filter: blur(5.7px);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ProfilePage__showButton:hover {
+  background: rgba(139,139,139,0.4);
+  border: 1px solid rgba(255,255,255,0.4);
+}

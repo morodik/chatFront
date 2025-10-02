@@ -1,0 +1,173 @@
+.WelcomePage {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: linear-gradient(81.75deg, #131E2F 2.39%, #999999 142.88%);
+  }
+  
+  .WelcomePage__title {
+    position: absolute;
+    width: 673px;
+    height: 112px;
+    left: 398px;
+    top:    8px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+  
+    color: #FFFFFF;
+  }
+
+  .WelcomePage__subtitle {
+    position: absolute;
+    width: 644px;
+    height: 19px;
+    left: 412px;
+    top: 147px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  
+    color: #A9A9A9;
+  }
+
+  /* Полупрозрачный прямоугольник */
+.WelcomePage__messagesBlock {
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 528px;
+    height: 396px;
+    left: 456px;
+    top: 211px;
+  
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px); /* поддержка браузерами ограничена */
+    border-radius: 14px;
+  }
+  
+  /* Заголовок внутри блока */
+  .WelcomePage__messagesTitle {
+    position: absolute;
+    width: 306px;
+    height: 21px;
+    left: 480px;
+    top: 234px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+  
+    color: #FFFFFF;
+  }
+
+/* Кнопка */
+.WelcomePage__streamButton {
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 292px;
+    height: 51px;
+    left: 574px;
+    top: 634px;
+  
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px);
+    border-radius: 10px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    cursor: pointer;
+  
+    /* Плавный переход фона */
+    transition: background 0.3s ease;
+  }
+  
+  /* Текст кнопки */
+  .WelcomePage__streamButtonText {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #EBEBEB;
+  }
+  
+  /* Hover эффект */
+  .WelcomePage__streamButton:hover {
+    background: rgba(139, 139, 139, 0.28);
+  }
+
+  /* Один блок сообщения (Rectangle 121) */
+  .WelcomePage__messageItem {
+    width: 447px; /* фиксированная ширина */
+    height: 51px;
+    top: 70px;
+    position: relative;
+  
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px);
+    border-radius: 10px;
+  
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  /* Ник пользователя */
+  .WelcomePage__messageNick {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #A9A9A9;
+    margin-right: 10px;
+  }
+  
+  /* Текст сообщения */
+  .WelcomePage__messageText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #EBEBEB;
+  }
+  
+  .WelcomePage__messagesBlock {
+    box-sizing: border-box;
+  
+
+    width: 528px;
+    height: 396px;
+    left: 456px;
+    top: 211px;
+  
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px);
+    border-radius: 14px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* выравнивание по горизонтали */
+    padding: 16px;
+    overflow-y: auto;
+    gap: 10px; /* расстояние между сообщениями */
+  }

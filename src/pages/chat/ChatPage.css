@@ -1,0 +1,73 @@
+.ChatPage {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: linear-gradient(81.75deg, #131e2f 2.39%, #999999 142.88%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+  
+  .ChatPage__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .ChatPage__messagesBlock {
+    width: 600px;
+    height: 500px;
+    background: rgba(93, 96, 113, 0.28);
+    border-radius: 14px;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .ChatPage__messageItem {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+  }
+  
+  .ChatPage__messageSender {
+    font-weight: 500;
+  }
+  
+  .ChatPage__messageText {
+    font-weight: 400;
+  }
+  
+  .ChatPage__inputBlock {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .ChatPage__input {
+    width: 400px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    background: rgba(93, 96, 113, 0.28);
+    color: #fff;
+  }
+  
+  .ChatPage__sendButton {
+    padding: 10px 20px;
+    background: rgba(93, 96, 113, 0.28);
+    border-radius: 10px;
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    color: #EBEBEB;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .ChatPage__sendButton:hover {
+    background: rgba(139, 139, 139, 0.28);
+  }

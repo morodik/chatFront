@@ -1,0 +1,163 @@
+.RegisterPage {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: linear-gradient(81.75deg, #131E2F 2.39%, #999999 142.88%);
+  }
+  
+  /* Блок формы */
+  .RegisterPage__formBlock {
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 528px;
+    height: 583px; /* увеличили, чтобы вместить поле повторного пароля */
+    left: 456px;
+    top: 63px;
+  
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px);
+    border-radius: 14px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+  
+  /* Заголовок "Регистрация" */
+  .RegisterPage__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: center;
+    color: #FFFFFF;
+  
+    position: absolute;
+    left: 145px; /* по центру формы */
+    top: 5px;
+  }
+  
+  /* Лейбл "Почта" */
+  .RegisterPage__label {
+    position: absolute;
+    left: 53px;
+    top: 80px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+  }
+  
+  /* Поле ввода Почты */
+  .RegisterPage__input {
+    position: absolute;
+    width: 400px;
+    height: 48px;
+    left: 53px;
+    top: 113px;
+  
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    border-radius: 10px;
+    padding-left: 12px;
+  
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .RegisterPage__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Лейбл "Пароль" */
+  .RegisterPage__label--password {
+    top: 178px; /* чуть ниже Почты */
+  }
+  
+  /* Поле ввода Пароля */
+  .RegisterPage__input--password {
+    top: 211px; /* под лейблом */
+  }
+  
+  /* Лейбл "Повторите пароль" */
+  .RegisterPage__label--repeat {
+    top: 276px; /* чуть ниже Пароля */
+  }
+  
+  /* Поле ввода "Повторите пароль" */
+  .RegisterPage__input--repeat {
+    top: 309px; /* под лейблом */
+  }
+  
+  /* Кнопка Зарегистрироваться */
+  .RegisterPage__button {
+    position: absolute;
+    width: 238px;
+    height: 51px;
+    left: 140px; /* по центру формы */
+    top: 390px;
+  
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px);
+    border-radius: 10px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #EBEBEB;
+  
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .RegisterPage__button:hover {
+    background: rgba(139, 139, 139, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Текст "или" */
+  .RegisterPage__or {
+    position: absolute;
+    width: 26px;
+    height: 18px;
+    left: 250px;
+    top: 440px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #A9A9A9;
+  }
+  
+  /* Ссылка на вход */
+  .RegisterPage__loginLink {
+    position: relative;
+    display: block;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    top: 430px;
+  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+  
+    color: #A9A9A9;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .RegisterPage__loginLink:hover {
+    text-decoration: underline;
+    color: #A9A9A9;
+  }

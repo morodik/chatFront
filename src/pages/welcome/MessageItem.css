@@ -1,0 +1,37 @@
+/* Блок отдельного сообщения */
+.WelcomePage__messageItem {
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 447px;
+    height: 51px;
+    left: 501px;
+    top: 398px; /* для примера, в списке будем смещать */
+    
+    background: rgba(93, 96, 113, 0.28);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+    backdrop-filter: blur(5.7px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  /* Индикатор "F" */
+  .WelcomePage__messageFlag {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #EBEBEB;
+    margin-right: 16px;
+  }
+  
+  /* Ник пользователя */
+  .WelcomePage__messageNick {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #A9A9A9;
+  }
