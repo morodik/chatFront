@@ -4,19 +4,39 @@
 
 
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ====================== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ТЕМ ====================== */
+:root[data-theme="dark"] {
+  --bg-page: linear-gradient(135deg, #0a0e17 0%, #121826 50%, #1a1f2e 100%);
+  --bg-card: rgba(20, 25, 45, 0.48);
+  --bg-card-hover: rgba(40, 45, 80, 0.55);
+  --bg-button: rgba(80, 100, 255, 0.28);
+  --bg-button-hover: rgba(100, 120, 255, 0.38);
+  --bg-input: rgba(20, 25, 45, 0.48);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --text-primary: #ffffff;
+  --text-secondary: #a8b0d8;
+  --text-muted: #8b9eff;
+  --text-button: #ffffff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --border: rgba(100, 120, 255, 0.18);
+  --border-hover: rgba(140, 140, 255, 0.4);
+}
+
+:root[data-theme="light"] {
+  --bg-page: linear-gradient(81.75deg, #e8f0ff 2.39%, #ffffff 80%, #f0f5ff 142.88%);
+  --bg-card: rgba(255, 255, 255, 0.68);
+  --bg-card-hover: rgba(255, 255, 255, 0.88);
+  --bg-button: rgba(100, 110, 255, 0.32);
+  --bg-button-hover: rgba(90, 100, 255, 0.45);
+  --bg-input: rgba(255, 255, 255, 0.78);
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #4f46e5;
+  --text-button: #ffffff;
+
+  --border: rgba(148, 163, 255, 0.42);
+  --border-hover: rgba(120, 130, 255, 0.6);
 }
 
 a {
@@ -30,8 +50,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: block;
+  place-items: unset;
   min-width: 320px;
   min-height: 100vh;
 }

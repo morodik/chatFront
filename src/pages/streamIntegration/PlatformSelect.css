@@ -1,0 +1,104 @@
+.PlatformPage {
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px 80px;
+  box-sizing: border-box;
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  font-family: 'SF Pro Display', 'Roboto', sans-serif;
+  transition: background 0.8s ease;
+}
+
+.PlatformPage__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.15;
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: -0.8px;
+}
+
+.PlatformPage__subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(16px, 2.5vw, 19px);
+  line-height: 1.6;
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 720px;
+  opacity: 0.92;
+}
+
+.PlatformPage__platformBlock {
+  display: flex;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  backdrop-filter: blur(16px);
+  width: min(90%, 640px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.PlatformPage__option {
+  flex: 1;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.PlatformPage__option:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+}
+
+.PlatformPage__option.active {
+  background: var(--bg-button);
+  border-color: var(--border-hover);
+  color: var(--text-button);
+  box-shadow: 0 8px 32px rgba(100, 110, 255, 0.3);
+}
+
+.PlatformPage__button {
+  margin-top: 16px;
+  width: min(90%, 380px);
+  height: 64px;
+  background: var(--bg-button);
+  border: 1px solid var(--button-border, var(--border-hover));
+  border-radius: 18px;
+  color: var(--text-button);
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 12px 32px rgba(80, 80, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.PlatformPage__button:hover {
+  background: var(--bg-button-hover);
+  box-shadow: 0 20px 40px rgba(100, 110, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .PlatformPage__platformBlock {
+    flex-direction: column;
+  }
+  .PlatformPage__option {
+    height: 72px;
+  }
+}

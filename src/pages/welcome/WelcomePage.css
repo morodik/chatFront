@@ -1,173 +1,159 @@
+/* ====================== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ====================== */
+
+/* Тёмная тема — твоя любимая */
+:root[data-theme="dark"] {
+  --bg-primary: linear-gradient(135deg, #0a0e17 0%, #121826 50%, #1a1f2e 100%);
+  --bg-card: rgba(20, 25, 45, 0.48);
+  --bg-card-hover: rgba(40, 45, 80, 0.55);
+  --bg-button: linear-gradient(135deg, rgba(80, 100, 255, 0.28), rgba(120, 80, 255, 0.22));
+  --bg-button-hover: linear-gradient(135deg, rgba(100, 120, 255, 0.38), rgba(140, 100, 255, 0.32));
+
+  --text-title: #ffffff;
+  --text-subtitle: #a8b0d8;
+  --text-main: #e8e8ff;
+  --text-nick: #8b9eff;
+  --text-button: #ffffff;
+
+  --border-color: rgba(100, 120, 255, 0.18);
+  --button-border: rgba(140, 140, 255, 0.3);
+
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --shadow-button: 0 12px 32px rgba(80, 80, 255, 0.15);
+}
+
+/* Светлая тема — 1 в 1 как твоя тёмная, только светлая */
+:root[data-theme="light"] {
+  --bg-primary: linear-gradient(81.75deg, #e8f0ff 2.39%, #ffffff 80%, #f0f5ff 142.88%);
+  --bg-card: rgba(255, 255, 255, 0.42);
+  --bg-card-hover: rgba(255, 255, 255, 0.68);
+  --bg-button: rgb(0, 0, 0);
+  --bg-button-hover: rgb(89, 89, 89);
+
+  --text-title: #0f172a;
+  --text-subtitle: #64748b;
+  --text-main: #1e293b;
+  --text-nick: rgb(89, 89, 89);
+  --text-button: #ffffff;
+
+  --border-color: rgba(148, 163, 255, 0.42);
+  --button-border: rgb(89, 89, 89);
+
+  --shadow-card: 0 12px 40px rgba(100, 110, 200, 0.18);
+  --shadow-button: 0 12px 32px rgba(100, 110, 255, 0.22);
+}
+
+/* ====================== ОСНОВНЫЕ СТИЛИ ====================== */
 .WelcomePage {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    background: linear-gradient(81.75deg, #131E2F 2.39%, #999999 142.88%);
-  }
-  
-  .WelcomePage__title {
-    position: absolute;
-    width: 673px;
-    height: 112px;
-    left: 398px;
-    top:    8px;
-  
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 56px;
-    text-align: center;
-  
-    color: #FFFFFF;
-  }
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px 80px;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.8s ease;
+}
 
-  .WelcomePage__subtitle {
-    position: absolute;
-    width: 644px;
-    height: 19px;
-    left: 412px;
-    top: 147px;
-  
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-  
-    color: #A9A9A9;
-  }
+.WelcomePage__title {
+  margin: 0 0 16px 0;
+  font-family: 'SF Pro Display', 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 1.12;
+  letter-spacing: -1px;
+  text-align: center;
+  color: var(--text-title);
+  max-width: 90%;
+}
 
-  /* Полупрозрачный прямоугольник */
+.WelcomePage__subtitle {
+  margin: 0 0 56px 0;
+  font-family: 'SF Pro Text', 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: clamp(17px, 2.8vw, 21px);
+  line-height: 1.6;
+  text-align: center;
+  color: var(--text-subtitle);
+  max-width: 760px;
+  opacity: 0.95;
+}
+
 .WelcomePage__messagesBlock {
-    box-sizing: border-box;
-  
-    position: absolute;
-    width: 528px;
-    height: 396px;
-    left: 456px;
-    top: 211px;
-  
-    background: rgba(93, 96, 113, 0.28);
-    border: 1px solid rgba(207, 207, 207, 0.28);
-    backdrop-filter: blur(5.7px); /* поддержка браузерами ограничена */
-    border-radius: 14px;
-  }
-  
-  /* Заголовок внутри блока */
-  .WelcomePage__messagesTitle {
-    position: absolute;
-    width: 306px;
-    height: 21px;
-    left: 480px;
-    top: 234px;
-  
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-  
-    color: #FFFFFF;
-  }
+  width: min(90%, 620px);
+  max-height: 380px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-card);
+  inset: 0 1px 0 rgba(255,255,255,0.15);
+}
 
-/* Кнопка */
+.WelcomePage__messageItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-family: 'SF Pro Text', 'Roboto', sans-serif;
+  border-radius: 16px;
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.WelcomePage__messageItem:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.WelcomePage__messageNick {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-nick);
+  margin-right: 12px;
+  min-width: 80px;
+}
+
+.WelcomePage__messageText {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
 .WelcomePage__streamButton {
-    box-sizing: border-box;
-  
-    position: absolute;
-    width: 292px;
-    height: 51px;
-    left: 574px;
-    top: 634px;
-  
-    background: rgba(93, 96, 113, 0.28);
-    border: 1px solid rgba(207, 207, 207, 0.28);
-    backdrop-filter: blur(5.7px);
-    border-radius: 10px;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    cursor: pointer;
-  
-    /* Плавный переход фона */
-    transition: background 0.3s ease;
-  }
-  
-  /* Текст кнопки */
-  .WelcomePage__streamButtonText {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: center;
-    color: #EBEBEB;
-  }
-  
-  /* Hover эффект */
-  .WelcomePage__streamButton:hover {
-    background: rgba(139, 139, 139, 0.28);
-  }
+  margin-top: 48px;
+  font-family: 'SF Pro Text', 'Roboto', sans-serif;
+  width: min(90%, 380px);
+  height: 64px;
+  background: var(--bg-button);
+  border: 1px solid var(--button-border);
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow-button);
+  backdrop-filter: blur(12px);
+}
 
-  /* Один блок сообщения (Rectangle 121) */
-  .WelcomePage__messageItem {
-    width: 447px; /* фиксированная ширина */
-    height: 51px;
-    top: 70px;
-    position: relative;
-  
-    background: rgba(93, 96, 113, 0.28);
-    border: 1px solid rgba(207, 207, 207, 0.28);
-    backdrop-filter: blur(5.7px);
-    border-radius: 10px;
-  
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-  }
-  
-  /* Ник пользователя */
-  .WelcomePage__messageNick {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #A9A9A9;
-    margin-right: 10px;
-  }
-  
-  /* Текст сообщения */
-  .WelcomePage__messageText {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    color: #EBEBEB;
-  }
-  
-  .WelcomePage__messagesBlock {
-    box-sizing: border-box;
-  
+.WelcomePage__streamButton:hover {
+  background: var(--bg-button-hover);
+  box-shadow: 0 20px 40px rgba(100, 110, 255, 0.3);
+} 
 
-    width: 528px;
-    height: 396px;
-    left: 456px;
-    top: 211px;
-  
-    background: rgba(93, 96, 113, 0.28);
-    border: 1px solid rgba(207, 207, 207, 0.28);
-    backdrop-filter: blur(5.7px);
-    border-radius: 14px;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* выравнивание по горизонтали */
-    padding: 16px;
-    overflow-y: auto;
-    gap: 10px; /* расстояние между сообщениями */
-  }
+.WelcomePage__streamButtonText {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-button);
+}
+
+/* Кнопка смены темы — красивая и в углу */

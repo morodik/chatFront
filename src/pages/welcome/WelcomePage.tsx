@@ -1,11 +1,16 @@
+// WelcomePage.tsx — ЧИСТАЯ ВЕРСИЯ (без темы)
 import React from "react";
-import "./WelcomePage.css";
 import { Link } from "react-router-dom";
 import MessageItem from "./MessageItem";
+import "./WelcomePage.css";
+import ListeningPlayer from "../../components/ListeningPlayer";
 
 const WelcomePage: React.FC = () => {
+  const isAuth = !!localStorage.getItem("token");
+
   return (
     <div className="WelcomePage">
+      <ListeningPlayer />   {/* ← вот здесь, внизу */}
       <h1 className="WelcomePage__title">
         Быстро узнайте о проблемах с трансляцией
       </h1>
@@ -19,11 +24,10 @@ const WelcomePage: React.FC = () => {
         <MessageItem nick="streamer42" text="Лагает звук" />
       </div>
 
-      <h2 className="WelcomePage__messagesTitle">
-        Последние сообщения о проблемах
-      </h2>
-
-      <Link to="/login" className="WelcomePage__streamButton">
+      <Link
+        to={isAuth ? "/platform-select" : "/login"}
+        className="WelcomePage__streamButton"
+      >
         <span className="WelcomePage__streamButtonText">
           Интеграция со стримом
         </span>

@@ -1,37 +1,60 @@
-/* Блок отдельного сообщения */
+/* Контейнер сообщения */
 .WelcomePage__messageItem {
-    box-sizing: border-box;
-  
-    position: absolute;
-    width: 447px;
-    height: 51px;
-    left: 501px;
-    top: 398px; /* для примера, в списке будем смещать */
-    
-    background: rgba(93, 96, 113, 0.28);
-    border: 1px solid rgba(207, 207, 207, 0.28);
-    backdrop-filter: blur(5.7px);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
+  box-sizing: border-box;
+
+  width: 90%;
+  max-width: 600px;
+  min-height: 50px;
+
+  background: rgba(93, 96, 113, 0.28);
+  border: 1px solid rgba(207, 207, 207, 0.28);
+  backdrop-filter: blur(5.7px);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 16px;
+  margin: 10px auto;
+
+  /* Больше не absolute */
+  position: relative;
+}
+
+/* Ник пользователя */
+.WelcomePage__messageNick {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #A9A9A9;
+  white-space: nowrap;
+}
+
+/* Текст сообщения */
+.WelcomePage__messageText {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #EBEBEB;
+
+  /* Адаптивность текста */
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 600px) {
+  .WelcomePage__messageItem {
+    max-width: 100%;
+    padding: 10px 12px;
   }
-  
-  /* Индикатор "F" */
-  .WelcomePage__messageFlag {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    color: #EBEBEB;
-    margin-right: 16px;
-  }
-  
-  /* Ник пользователя */
+
   .WelcomePage__messageNick {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #A9A9A9;
+    font-size: 14px;
   }
+ 
+  .WelcomePage__messageText {
+    font-size: 14px;
+  }
+}

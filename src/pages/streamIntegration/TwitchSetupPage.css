@@ -1,0 +1,133 @@
+/* ====================== КОНФИГУРАЦИЯ СТРИМА — ОБЕ ТЕМЫ ====================== */
+.StreamConfigPage {
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px 80px;
+  box-sizing: border-box;
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  font-family: 'SF Pro Display', 'Roboto', sans-serif;
+  transition: background 0.8s ease;
+}
+
+.StreamConfigPage__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(36px, 6vw, 56px);
+  color: var(--text-primary);
+  text-align: center;
+  letter-spacing: -0.8px;
+}
+
+.StreamConfigPage__subtitle {
+  margin: 0 0 24px 0;
+  font-weight: 400;
+  font-size: clamp(16px, 2.5vw, 19px);
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 720px;
+  opacity: 0.92;
+}
+
+.StreamConfigPage__configBlock {
+  width: min(90%, 520px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.StreamConfigPage__platformLabel {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 16px;
+  background: var(--bg-input);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.StreamConfigPage__nicknameLabel {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.StreamConfigPage__nicknameInput {
+  height: 58px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0 20px;
+  font-size: 17px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.StreamConfigPage__nicknameInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.StreamConfigPage__nicknameInput:focus {
+  outline: none;
+  border-color: rgba(120, 130, 255, 0.6);
+  box-shadow: 0 0 0 4px rgba(120, 130, 255, 0.15);
+}
+
+.StreamConfigPage__startButton {
+  height: 64px;
+  background: var(--bg-button);
+  border: 1px solid var(--border-hover);
+  border-radius: 18px;
+  color: var(--text-button);
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 12px 32px rgba(80, 80, 255, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.StreamConfigPage__startButton:hover {
+  background: var(--bg-button-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(100, 110, 255, 0.35);
+}
+
+.BackButton {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.BackButton:hover {
+  background: var(--bg-card-hover);
+}
+
+@media (max-width: 768px) {
+  .StreamConfigPage {
+    padding: 90px 16px 60px;
+  }
+  .StreamConfigPage__configBlock {
+    padding: 24px;
+  }
+}

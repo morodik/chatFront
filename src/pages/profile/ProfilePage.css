@@ -1,93 +1,310 @@
+/* ====================== ПРОФИЛЬ — ПОДДЕРЖКА ОБЕИХ ТЕМ ====================== */
 .ProfilePage {
-  position: relative;
-  width: 1440px;
-  height: 1024px;
-  background: linear-gradient(81.75deg, #131E2F 2.39%, #999999 142.88%);
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px 80px;
+  box-sizing: border-box;
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  font-family: 'SF Pro Display', 'Roboto', sans-serif;
+  transition: background 0.8s ease;
 }
 
 .ProfilePage__formBlock {
-  box-sizing: border-box;
-  position: absolute;
-  width: 528px;
-  height: 400px;
-  left: 456px;
-  top: 200px;
-  background: rgba(93, 96, 113, 0.28);
-  border: 1px solid rgba(207, 207, 207, 0.28);
-  backdrop-filter: blur(5.7px);
-  border-radius: 14px;
+  width: min(90%, 460px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 40px;
+  align-items: center;
+  gap: 28px;
+  transition: all 0.4s ease;
 }
 
-.ProfilePage__title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 47px;
-  text-align: center;
-  color: #FFFFFF;
-  width: 100%;
-  margin-bottom: 40px;
+.ProfilePage__formBlock:hover {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 
-.ProfilePage__label {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-  height: 48px;
-}
-
-.ProfilePage__inputWrapper,
-.ProfilePage__passwordWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 448px;
+/* Аватар */
+.ProfilePage__avatar {
+  width: 96px;
+  height: 96px;
+  background: var(--bg-input);
+  border: 3px solid var(--border);
+  border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
 }
 
+/* Заголовок */
+.ProfilePage__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+/* Лейбл */
+.ProfilePage__label {
+  align-self: flex-start;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* Обёртка для инпута (чтобы можно было добавить иконку потом) */
+.ProfilePage__inputWrapper {
+  width: 100%;
+}
+
+/* Инпут (только чтение) */
 .ProfilePage__input {
-  width: 100%;
-  max-width: 448px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(207, 207, 207, 0.28);
-  border-radius: 10px;
-  padding: 0 12px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  color: #fff;
-  margin-bottom: 30px;
-  box-sizing: border-box;
+  width: 90%;
+  height: 58px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0 20px;
+  font-size: 17px;
+  color: var(--text-primary);
+  font-weight: 500;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.ProfilePage__input--password {
-  width: 100%;
+.ProfilePage__input:focus {
+  outline: none;
+  border-color: rgba(120, 130, 255, 0.6);
+  box-shadow: 0 0 0 4px rgba(120, 130, 255, 0.15), inset 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.ProfilePage__showButton {
+/* Кнопка выхода — красная, как в Dashboard */
+.ProfilePage__button {
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border: none;
+  border-radius: 18px;
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 12px 32px rgba(231, 76, 60, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.ProfilePage__button:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(231, 76, 60, 0.5);
+}
+
+.ProfilePage__button:active {
+  transform: translateY(-2px);
+}
+
+/* Кнопка "назад" — в стиле всех страниц */
+.BackButton {
   position: absolute;
-  top: 11px;
-  right: 10px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(207,207,207,0.28);
-  backdrop-filter: blur(5.7px);
-  border-radius: 8px;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+  top: 24px;
+  left: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.BackButton:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Ошибка */
+.ProfilePage__error {
+  color: #ff6b6b;
+  font-size: 18px;
+  text-align: center;
+  padding: 40px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .ProfilePage {
+    padding: 90px 16px 60px;
+    gap: 24px;
+  }
+  .ProfilePage__formBlock {
+    padding: 32px 24px;
+  }
+  .BackButton {
+    top: 16px;
+    left: 16px;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+}
+.ProfilePage__container {
+  width: min(90%, 800px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 100px;
+}
+
+.ProfilePage__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+}
+
+.ProfilePage__email {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin: 16px 0;
+  opacity: 0.9;
+}
+
+.ProfilePage__logout {
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border: none;
+  border-radius: 18px;
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.ProfilePage__section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.ProfilePage__sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 20px 0;
+}
+
+.ProfilePage__empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+.ProfilePage__favorites,
+.ProfilePage__history {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ProfilePage__channelItem,
+.ProfilePage__historyItem {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.ProfilePage__channelItem:hover,
+.ProfilePage__historyItem:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.ProfilePage__historyChannel {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ProfilePage__historyDate {
   font-size: 14px;
-  padding: 4px 8px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.ProfilePage__channelActions,
+.ProfilePage__historyActions {
+  display: flex;
+  gap: 12px;
+}
+
+.ProfilePage__playBtn,
+.ProfilePage__pinBtn,
+.ProfilePage__unpinBtn,
+.ProfilePage__pinned {
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.ProfilePage__showButton:hover {
-  background: rgba(139,139,139,0.4);
-  border: 1px solid rgba(255,255,255,0.4);
+.ProfilePage__playBtn {
+  background: var(--bg-button);
+  color: var(--text-button);
+  border: 1px solid var(--border-hover);
+}
+
+.ProfilePage__pinBtn {
+  background: rgba(100, 110, 255, 0.15);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.ProfilePage__pinned {
+  background: #10b981;
+  color: white;
+}
+
+.ProfilePage__unpinBtn {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }

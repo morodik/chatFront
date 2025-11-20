@@ -1,0 +1,140 @@
+/* ====================== DASHBOARD — ПОДДЕРЖКА ОБЕИХ ТЕМ ====================== */
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px 80px; /* отступ под Navbar */
+  box-sizing: border-box;
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  font-family: 'SF Pro Display', 'Roboto', sans-serif;
+  transition: background 0.8s ease;
+}
+
+.dashboard__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.dashboard__platform,
+.dashboard__channel {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-secondary);
+  opacity: 0.9;
+}
+
+.dashboard__messages-block {
+  width: min(90%, 600px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard__messages-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.dashboard__messages-list {
+  max-height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 8px;
+}
+
+/* Скроллбар — красиво в обеих темах */
+.dashboard__messages-list::-webkit-scrollbar {
+  width: 6px;
+}
+.dashboard__messages-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dashboard__messages-list::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 3px;
+}
+
+.dashboard__message {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.dashboard__message:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.dashboard__message-text {
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--text-primary);
+  word-break: break-word;
+  max-width: 70%;
+}
+
+.dashboard__message-username {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.dashboard__no-messages {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 40px 20px;
+  opacity: 0.8;
+}
+
+.dashboard__end-button {
+  width: min(90%, 380px);
+  height: 60px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border: none;
+  border-radius: 18px;
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+}
+
+.dashboard__end-button:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: 0 16px 40px rgba(231, 76, 60, 0.5);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 90px 16px 60px;
+    gap: 24px;
+  }
+  .dashboard__message-text {
+    max-width: 65%;
+  }
+}
