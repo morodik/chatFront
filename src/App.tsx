@@ -7,6 +7,7 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import PlatformSelect from "./pages/streamIntegration/PlatformSelect";
 import TwitchSetupPage from "./pages/streamIntegration/TwitchSetupPage";
 import TwitchDasboard from "./pages/streamIntegration/TwitchDashboard";
+import AdminPage from "./pages/admin/AdminPage";
 import AppLayout from "./components/AppLayout";
 // import других страниц, когда появятся
 // import ProfilePage from "./pages/Profile/ProfilePage";
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/" element={<WelcomePage />} />
 
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/platform-select" element={<PlatformSelect />} />
         <Route path="/dashboard" element={<TwitchDasboard  />} />
         </Route>
@@ -27,9 +29,7 @@ const App: React.FC = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/twitch" element={<TwitchSetupPage />} />
 
-        {/* Позже добавим новые страницы */}
-        {/* <Route path="/profile" element={<ProfilePage />} /> */}
-        {/* <Route path="/setup" element={<StreamSetupPage />} /> */}
+      
       </Routes>
     </Router>
   );

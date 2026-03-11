@@ -1,10 +1,13 @@
+// src/pages/login/LoginPage.tsx — обновлён для AuthContext
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 import "./LoginPage.css";
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,7 +20,8 @@ const LoginPage: React.FC = () => {
         password,
       });
       const { token } = response.data;
-      localStorage.setItem("token", token); // Сохраняем токен
+      // Используем AuthContext.login — он сохраняет токен и загружает user + role
+      await login(token);
       setError("");
       navigate("/");
     } catch (err: any) {
@@ -28,15 +32,13 @@ const LoginPage: React.FC = () => {
   return (
     <div className="LoginPage">
       <button className="BackButton" onClick={() => navigate("/")}>
-  ← Назад
-</button>
+        ← Назад
+      </button>
       <div className="LoginPage__formBlock">
         <form className="LoginPage__form" onSubmit={handleSubmit}>
           <h1 className="LoginPage__title">Вход</h1>
           {error && <p className="LoginPage__error">{error}</p>}
-          <label className="LoginPage__label" htmlFor="email">
-            Почта
-          </label>
+          <label className="LoginPage__label" htmlFor="email">Почта</label>
           <input
             type="email"
             id="email"
@@ -56,9 +58,7 @@ const LoginPage: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" className="LoginPage__button">
-            Войти
-          </button>
+          <button type="submit" className="LoginPage__button">Войти</button>
           <p className="LoginPage__or">или</p>
           <Link to="/register" className="LoginPage__registerLink">
             Зарегистрироваться
